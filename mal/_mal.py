@@ -112,7 +112,16 @@ class _MAL(_Base):
                 self._border_spans, "English:", str
             )
         return self._title_english
-
+    @property
+    @_base.property
+    def title_french(self) -> str:
+        try:
+            self._title_french
+        except AttributeError:
+            self._title_french = self._get_span_text(
+                self._border_spans, "French:", str
+            )
+        return self._title_french
     @property
     @_base.property
     def title_japanese(self) -> str:
